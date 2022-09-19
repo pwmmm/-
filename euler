@@ -1,0 +1,62 @@
+#include <iostream>
+int First()
+{
+    
+    int sum = 0;
+    for (int i = 0; i < 1000; i++)
+    {
+        if (i % 5 == 0 || i % 3 == 0)
+            sum = sum + i;
+    }
+    std::cout << "First answer:" << sum << std::endl;
+    return 0;
+}
+int Second()
+{
+    int first = 0;
+    int second = 1;
+    int sum = 0;
+    while (first + second < 4000000)
+    {
+        int third = first + second;
+        if (third % 2 == 0)
+        {
+            sum = sum + third;
+        }
+        
+        first = second;
+        second = third;
+    }
+
+    std::cout <<"Second answer:"<<sum<< std::endl;
+    return 0;
+}
+int third()
+{
+    long long greaterFactor = 600851475143;
+
+    for (long long i = 3; i <= greaterFactor; i += 2)
+    {
+        if (greaterFactor % i == 0)                
+        {
+            if (greaterFactor / i >= i)            
+            {
+                greaterFactor /= i;                 
+                i -= 2;                              
+            }                                       
+        }
+        
+    }
+
+    std::cout <<"Third answer:"<<greaterFactor <<std::endl;
+    return 0;
+}  
+
+    
+int main()
+{
+    First();
+    Second();
+    third();
+}
+
